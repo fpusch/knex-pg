@@ -5,7 +5,6 @@ import { TaskModel } from '../database/models/task.model';
 
 @Injectable()
 export class TasksService {
-  constructor() {}
 
   findAll(filter: Partial<TaskModel>) {
     const q = TaskModel.query().orderBy('id').limit(100);

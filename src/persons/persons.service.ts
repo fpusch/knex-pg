@@ -5,7 +5,6 @@ import { PersonModel } from '../database/models/person.model';
 
 @Injectable()
 export class PersonsService {
-  constructor() {}
 
   findAll(filter: Partial<PersonModel>) {
     const q  = PersonModel.query().orderBy('id').limit(100);
