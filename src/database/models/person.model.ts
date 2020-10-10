@@ -2,11 +2,6 @@ import { BaseModel } from './base.model';
 import { TaskModel } from './task.model';
 import { Model } from 'objection';
 
-export interface Person {
-  firstName: string;
-  lastName: string;
-  birthday: Date;
-}
 export class PersonModel extends BaseModel {
   static tableName = 'person';
 
