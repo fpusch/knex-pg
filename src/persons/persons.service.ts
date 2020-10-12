@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { QueryBuilder } from 'objection';
 import { PersonModel } from '../database/models/person.model';
 
-
 @Injectable()
 export class PersonsService {
 
@@ -27,13 +26,12 @@ export class PersonsService {
   }
 
   findOneWithTasks(id: number) {
-    const t = PersonModel.query()
+    return PersonModel.query()
       .findById(id)
       .withGraphFetched('tasks', { maxBatchSize: 1, joinOperation: 'innerJoin' })
       .modifyGraph('tasks', builder => {
         builder.limit(100);
       });
-    return t;
   }
 
   private buildPersonFilter(query: QueryBuilder<PersonModel, PersonModel[]>, filter: Partial<PersonModel>) {

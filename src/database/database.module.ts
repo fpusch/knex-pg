@@ -26,7 +26,7 @@ const providers = [
           user: process.env.POSTGRES_USER,
           password: process.env.POSTGRES_PASSWORD,
         },
-        debug: true,
+        // debug: true,
         ...knexSnakeCaseMappers()
       });
 

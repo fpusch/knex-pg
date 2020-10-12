@@ -5,4 +5,6 @@ export class TaskPersonModel extends Model {
 
   taskId: number;
   personId: number;
+
+  static idColumn = ['task_id', 'person_id'];
 }
